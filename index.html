@@ -2,54 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>For Rheet 🤍</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
-html,
 body{
-  width:100%;
-  min-height:100%;
-}
-
-body{
-  font-family:'Poppins',sans-serif;
   min-height:100vh;
+  font-family:Poppins,sans-serif;
   color:#fff;
   overflow-x:hidden;
-
   background:
-    radial-gradient(circle at top left,#7b2cbf55,transparent 35%),
-    radial-gradient(circle at bottom right,#ff4d9d44,transparent 35%),
-    linear-gradient(135deg,#16001f,#2b0638,#120019);
+    radial-gradient(circle at 10% 10%,#8e3cff40,transparent 35%),
+    radial-gradient(circle at 90% 90%,#ff3f9f35,transparent 35%),
+    linear-gradient(135deg,#100018,#290332,#120019);
 }
-
-
-/* =========================
-   PAGE
-========================= */
 
 .page{
   display:none;
-
   min-height:100vh;
   width:100%;
-
   align-items:center;
   justify-content:center;
-
-  padding:25px 15px;
-
+  padding:20px 10px;
   position:relative;
   z-index:2;
 }
@@ -58,718 +42,289 @@ body{
   display:flex;
 }
 
-
-/* =========================
-   CARD
-========================= */
-
 .card{
-  width:min(92%,500px);
+  width:95%;
   max-width:500px;
-
-  padding:30px 25px;
-
-  border-radius:28px;
-
+  padding:28px 20px;
   text-align:center;
-
-  background:rgba(255,255,255,.10);
-
-  border:1px solid rgba(255,255,255,.18);
-
+  border-radius:28px;
+  background:#ffffff18;
+  border:1px solid #ffffff25;
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
-
-  box-shadow:0 20px 60px rgba(0,0,0,.35);
-
-  animation:cardIn .7s ease;
-
+  box-shadow:0 20px 60px #00000055;
   overflow:hidden;
+  animation:cardIn .6s ease;
 }
 
 @keyframes cardIn{
-
   from{
     opacity:0;
-    transform:translateY(25px) scale(.96);
+    transform:translateY(20px) scale(.97);
   }
-
   to{
     opacity:1;
     transform:translateY(0) scale(1);
   }
-
 }
 
-
-/* =========================
-   TEXT
-========================= */
-
 h1{
-  font-size:clamp(25px,7vw,38px);
+  font-size:clamp(26px,7vw,38px);
+  line-height:1.3;
   margin-bottom:12px;
 }
 
 h2{
-  font-size:clamp(22px,6vw,31px);
+  font-size:clamp(21px,6vw,30px);
+  line-height:1.4;
   margin-bottom:15px;
 }
 
 p{
-  line-height:1.8;
   font-size:14px;
+  line-height:1.8;
 }
 
-
-/* =========================
-   INPUT
-========================= */
-
-.input-box{
-
+.input{
   width:100%;
-
-  padding:15px;
-
-  margin:18px 0 12px;
-
+  padding:14px;
+  margin:18px 0 10px;
   border:none;
   outline:none;
-
   border-radius:16px;
-
+  background:#ffffff18;
+  border:1px solid #ffffff25;
+  color:#fff;
+  font:15px Poppins,sans-serif;
   text-align:center;
-
-  font-size:16px;
-
-  font-family:inherit;
-
-  background:rgba(255,255,255,.14);
-
-  color:white;
-
-  border:1px solid rgba(255,255,255,.2);
 }
 
-.input-box::placeholder{
-  color:#ddd;
+.input::placeholder{
+  color:#ffffff99;
 }
-
-
-/* =========================
-   BUTTON
-========================= */
 
 .btn{
-
   border:none;
   outline:none;
-
-  cursor:pointer;
-
-  color:white;
-
-  font-family:inherit;
-
-  font-weight:600;
-
-  font-size:14px;
-
   padding:13px 22px;
-
-  border-radius:999px;
-
   margin:7px 4px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff4f9a,
-      #9b4dff
-    );
-
-  box-shadow:
-    0 8px 25px rgba(255,70,160,.25);
-
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(135deg,#ff3f9f,#954cff);
+  font:600 14px Poppins,sans-serif;
+  cursor:pointer;
+  box-shadow:0 8px 28px #ff3caa45;
 }
 
 .btn:active{
   transform:scale(.96);
 }
 
-
-/* =========================
-   ERROR
-========================= */
-
 .error{
-
-  color:#ffb4d4;
-
-  font-size:13px;
-
-  margin-top:8px;
-
   min-height:20px;
+  color:#ffb9d9;
+  font-size:13px;
 }
 
 .hint{
-
-  opacity:.7;
-
-  font-size:12px;
-
   margin-top:10px;
+  font-size:12px;
+  opacity:.65;
 }
 
-
-/* =========================
-   PENGUIN
-========================= */
-
-.penguin-img{
-
+.penguin{
   display:block;
-
-  width:min(75vw,300px);
-
+  width:min(78vw,310px);
   max-width:100%;
-
   height:auto;
-
   max-height:300px;
-
   object-fit:contain;
-
+  margin:0 auto 18px;
   border-radius:20px;
-
-  margin:5px auto 18px;
-
-  filter:
-    drop-shadow(
-      0 15px 25px rgba(0,0,0,.35)
-    );
+  filter:drop-shadow(0 15px 25px #00000055);
 }
 
-
-/* =========================
-   ARROW
-========================= */
-
-.big-arrow{
-
+.arrow{
   font-size:55px;
-
-  margin:12px 0;
-
+  margin:10px 0;
   animation:bounce 1s infinite;
 }
 
 @keyframes bounce{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(10px);
-  }
-
+  50%{transform:translateY(10px)}
 }
 
-
-/* =========================
-   COUNTDOWN
-========================= */
-
-.count-number{
-
-  font-size:
-    clamp(
-      90px,
-      28vw,
-      170px
-    );
-
+.count{
+  font-size:clamp(90px,28vw,170px);
+  line-height:1;
   font-weight:700;
-
-  color:#ff72b6;
-
-  text-shadow:
-    0 0 35px rgba(255,80,170,.7);
-
-  animation:numberPop .8s ease;
+  color:#ff70b5;
+  text-shadow:0 0 35px #ff46aa99;
+  margin:25px 0;
+  animation:pop .7s ease;
 }
 
-@keyframes numberPop{
-
+@keyframes pop{
   from{
     opacity:0;
     transform:scale(1.5);
   }
-
   to{
     opacity:1;
     transform:scale(1);
   }
-
 }
 
-
-/* =========================
-   MUSIC BUBBLE
-========================= */
-
-.music-bubble{
-
+.musicBubble{
   width:125px;
   height:125px;
-
   margin:25px auto;
-
-  border-radius:50%;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
+  border-radius:50%;
   font-size:52px;
-
   cursor:pointer;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff4f9a,
-      #914dff
-    );
-
+  background:linear-gradient(135deg,#ff3f9f,#934cff);
   box-shadow:
-
-    0 0 0 12px
-    rgba(255,100,180,.08),
-
-    0 0 45px
-    rgba(255,80,180,.6);
-
-  animation:pulse 1.6s infinite;
-
-  transition:.3s;
-}
-
-.music-bubble:active{
-  transform:scale(.9);
+    0 0 0 12px #ff64b414,
+    0 0 50px #ff46b0aa;
+  animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
-
-  0%,100%{
-
-    box-shadow:
-
-      0 0 0 12px
-      rgba(255,100,180,.08),
-
-      0 0 45px
-      rgba(255,80,180,.6);
-  }
-
   50%{
-
     box-shadow:
-
-      0 0 0 25px
-      rgba(255,100,180,.02),
-
-      0 0 70px
-      rgba(255,80,180,.8);
+      0 0 0 25px #ff64b405,
+      0 0 75px #ff46b0dd;
   }
-
 }
 
-
-/* =========================
-   BURST
-========================= */
-
-.burst{
-
-  position:fixed;
-
-  width:20px;
-  height:20px;
-
-  border-radius:50%;
-
-  background:#ff72b6;
-
-  pointer-events:none;
-
-  animation:
-    burst .7s ease-out forwards;
-
-  z-index:20;
-}
-
-@keyframes burst{
-
-  from{
-    transform:scale(1);
-    opacity:1;
-  }
-
-  to{
-    transform:scale(15);
-    opacity:0;
-  }
-
-}
-
-
-/* =========================
-   BIRTHDAY GIF
-========================= */
-
-.birthday-gif{
-
+.birthdayGif{
   display:block;
-
   width:100%;
-
   max-width:100%;
-
   height:auto;
-
   max-height:320px;
-
   object-fit:contain;
-
-  border-radius:22px;
-
   margin:0 auto 20px;
+  border-radius:20px;
 }
 
-
-/* =========================
-   MESSAGE
-========================= */
-
-.message-scroll-box{
-
-  text-align:left;
-
+.messageBox{
+  width:100%;
   height:390px;
-
   overflow-y:auto;
-
+  text-align:left;
   padding:18px;
-
   border-radius:20px;
-
-  background:
-    rgba(0,0,0,.16);
-
-  border:
-    1px solid
-    rgba(255,255,255,.10);
-
+  background:#00000025;
+  border:1px solid #ffffff18;
   scroll-behavior:smooth;
 }
 
-.message-scroll-box::-webkit-scrollbar{
+.messageBox::-webkit-scrollbar{
   width:5px;
 }
 
-.message-scroll-box::-webkit-scrollbar-track{
-
-  background:
-    rgba(255,255,255,.05);
-
+.messageBox::-webkit-scrollbar-thumb{
+  background:linear-gradient(#ff3f9f,#954cff);
   border-radius:10px;
 }
 
-.message-scroll-box::-webkit-scrollbar-thumb{
-
-  background:
-    linear-gradient(
-      #ff4f9a,
-      #9b4dff
-    );
-
-  border-radius:10px;
-}
-
-.message-text{
-
+.message{
   white-space:pre-line;
-
   font-size:14px;
-
   line-height:2;
-
-  color:#fff;
 }
 
-
-/* =========================
-   MESSAGE BUTTON
-========================= */
-
-.message-continue{
-
-  background:
-    linear-gradient(
-      135deg,
-      #555,
-      #777
-    );
-
-  opacity:.55;
-
+.messageBtn{
+  opacity:.5;
+  background:linear-gradient(135deg,#555,#777);
   box-shadow:none;
 }
 
-.message-continue.ready{
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff3f9f,
-      #a044ff
-    );
-
+.messageBtn.ready{
   opacity:1;
-
-  box-shadow:
-    0 8px 30px rgba(255,60,170,.45);
-
-  animation:readyPulse 1.4s infinite;
+  background:linear-gradient(135deg,#ff3f9f,#954cff);
+  box-shadow:0 8px 35px #ff3caa80;
+  animation:ready 1.4s infinite;
 }
 
-@keyframes readyPulse{
-
-  0%,100%{
-
-    box-shadow:
-      0 8px 30px
-      rgba(255,60,170,.35);
-  }
-
+@keyframes ready{
   50%{
-
-    box-shadow:
-      0 8px 45px
-      rgba(255,60,170,.75);
+    box-shadow:0 8px 50px #ff3caa;
   }
-
 }
 
-.scroll-warning{
-
-  min-height:28px;
-
-  margin-top:4px;
-
+.warning{
+  min-height:25px;
+  margin-top:5px;
+  color:#ffd1e8;
   font-size:14px;
-
   font-weight:600;
-
-  color:#ffd0e7;
-
   opacity:0;
-
-  transition:.3s;
 }
 
-.scroll-warning.show{
-
+.warning.show{
   opacity:1;
-
-  animation:
-    warningPop .35s ease;
 }
 
-@keyframes warningPop{
-
-  from{
-    transform:translateY(5px);
-    opacity:0;
-  }
-
-  to{
-    transform:translateY(0);
-    opacity:1;
-  }
-
-}
-
-
-/* =========================
-   VIDEO
-========================= */
-
-.video-box{
-
+.videoBox{
   width:100%;
-
-  border-radius:20px;
-
-  overflow:hidden;
-
-  background:#000;
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.4);
-
   margin:15px 0 18px;
-}
-
-.video-box video{
-
-  display:block;
-
-  width:100%;
-
-  max-width:100%;
-
-  height:auto;
-
-  max-height:65vh;
-
-  object-fit:contain;
-
+  overflow:hidden;
+  border-radius:20px;
   background:#000;
 }
 
-.video-note{
-
-  font-size:12px;
-
-  opacity:.7;
-
-  margin-top:8px;
+.videoBox video{
+  display:block;
+  width:100%;
+  max-width:100%;
+  max-height:70vh;
+  height:auto;
+  background:#000;
 }
-
-
-/* =========================
-   HEARTS
-========================= */
 
 .heart{
-
   position:fixed;
-
   bottom:-30px;
-
   pointer-events:none;
-
   z-index:1;
-
-  animation:
-    floatHeart linear forwards;
-
-  opacity:.7;
+  animation:float linear forwards;
 }
 
-@keyframes floatHeart{
-
+@keyframes float{
   from{
-
-    transform:
-      translateY(0)
-      rotate(0deg);
-
+    transform:translateY(0) rotate(0);
     opacity:0;
   }
-
-  10%{
-    opacity:.7;
-  }
-
+  10%{opacity:.7}
   to{
-
-    transform:
-      translateY(-110vh)
-      rotate(360deg);
-
+    transform:translateY(-110vh) rotate(360deg);
     opacity:0;
   }
-
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:600px){
-
-  .page{
-    padding:20px 10px;
-  }
-
   .card{
-
-    width:94%;
-
-    padding:25px 18px;
-
-    border-radius:25px;
+    padding:25px 17px;
   }
 
-  .birthday-gif{
-
-    width:100%;
-
-    max-width:100%;
-
+  .birthdayGif{
     max-height:280px;
-
-    border-radius:18px;
   }
-
-  .message-scroll-box{
-
-    height:390px;
-
-    padding:16px;
-  }
-
-  .video-box video{
-
-    max-height:70vh;
-  }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- ==================================================
-     LOGIN PAGE
-================================================== -->
-
-<section
-  id="loginPage"
-  class="page active"
->
-
+<!-- LOGIN -->
+<section id="loginPage" class="page active">
   <div class="card">
-
-    <h1>
-      Hey Rheet 🤍
-    </h1>
+    <h1>Hey Rheet 🤍</h1>
 
     <p>
       A little surprise is waiting for you... 🥹
@@ -777,72 +332,47 @@ p{
 
     <input
       id="password"
-      class="input-box"
+      class="input"
       type="password"
       placeholder="Enter password"
-      autocomplete="off"
     >
 
-    <button
-      class="btn"
-      onclick="login()"
-    >
+    <button class="btn" onclick="login()">
       Open 🤍
     </button>
 
-    <div
-      id="loginError"
-      class="error"
-    ></div>
+    <div id="loginError" class="error"></div>
 
     <div class="hint">
       Hint: RHEET
     </div>
-
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     PENGUIN PAGE
-================================================== -->
-
-<section
-  id="penguinPage"
-  class="page"
->
-
+<!-- PENGUIN -->
+<section id="penguinPage" class="page">
   <div class="card">
 
     <img
-      class="penguin-img"
+      class="penguin"
       src="https://res.cloudinary.com/s4rjpsff/image/upload/v1790096386/64185b4165d0b-funny-penguin-animated-gifs.gif"
-      alt="Funny Penguin"
+      alt="Penguin"
     >
 
-    <h2>
-      Hello Rheet! 🐧🤍
-    </h2>
+    <h2>Hello Rheet! 🐧🤍</h2>
 
     <p>
       This little penguin wants to say something to you... 😭
     </p>
 
-    <button
-      class="btn"
-      onclick="speakHello()"
-    >
+    <button class="btn" onclick="speakHello()">
       🔊 Say Hello!
     </button>
 
     <br>
 
-    <button
-      class="btn"
-      onclick="goToSoundPage()"
-    >
+    <button class="btn" onclick="goSound()">
       Continue 🤍
     </button>
 
@@ -851,29 +381,18 @@ p{
     </div>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     SOUND PAGE
-================================================== -->
-
-<section
-  id="soundPage"
-  class="page"
->
-
+<!-- SOUND -->
+<section id="soundPage" class="page">
   <div class="card">
 
     <h1>
       Please increase the sound a little 🔊
     </h1>
 
-    <div class="big-arrow">
-      👇🏻
-    </div>
+    <div class="arrow">👇🏻</div>
 
     <p>
       Turn your volume up a little...
@@ -881,45 +400,27 @@ p{
 
     <br>
 
-    <button
-      class="btn"
-      onclick="startCountdown()"
-    >
+    <button class="btn" onclick="startCountdown()">
       Done 🤘🏻
     </button>
 
-    <button
-      class="btn"
-      onclick="startCountdown()"
-    >
+    <button class="btn" onclick="startCountdown()">
       Okay 😊
     </button>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     COUNTDOWN PAGE
-================================================== -->
-
-<section
-  id="countdownPage"
-  class="page"
->
-
+<!-- COUNTDOWN -->
+<section id="countdownPage" class="page">
   <div class="card">
 
     <p>
       Wait a little... 🥹
     </p>
 
-    <div
-      id="countNumber"
-      class="count-number"
-    >
+    <div id="countNumber" class="count">
       5
     </div>
 
@@ -928,33 +429,22 @@ p{
     </p>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     MUSIC PAGE
-================================================== -->
-
-<section
-  id="musicPage"
-  class="page"
->
-
+<!-- MUSIC -->
+<section id="musicPage" class="page">
   <div class="card">
 
     <h2>
       Now play the music....🫠
     </h2>
 
-    <div class="big-arrow">
-      👇🏻
-    </div>
+    <div class="arrow">👇🏻</div>
 
     <div
-      class="music-bubble"
-      onclick="musicBubbleClick(event)"
+      class="musicBubble"
+      onclick="musicClick(event)"
     >
       🔊
     </div>
@@ -963,32 +453,20 @@ p{
       Press this bubble 🤍
     </p>
 
-    <div
-      id="musicStatus"
-      class="hint"
-    >
+    <div id="musicStatus" class="hint">
       Pehla Nasha 🎵
     </div>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     BIRTHDAY PAGE
-================================================== -->
-
-<section
-  id="birthdayPage"
-  class="page"
->
-
+<!-- BIRTHDAY -->
+<section id="birthdayPage" class="page">
   <div class="card">
 
     <img
-      class="birthday-gif"
+      class="birthdayGif"
       src="https://res.cloudinary.com/s4rjpsff/image/upload/v1789746473/happy-dance-birthday.gif"
       alt="Happy Birthday"
     >
@@ -1007,28 +485,16 @@ p{
 
     <br>
 
-    <button
-      class="btn"
-      onclick="showPage('messagePage')"
-    >
+    <button class="btn" onclick="showPage('messagePage')">
       Continue 💌
     </button>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     MESSAGE PAGE
-================================================== -->
-
-<section
-  id="messagePage"
-  class="page"
->
-
+<!-- MESSAGE -->
+<section id="messagePage" class="page">
   <div class="card">
 
     <h2>
@@ -1037,11 +503,11 @@ p{
 
     <div
       id="messageBox"
-      class="message-scroll-box"
-      onscroll="checkMessageScroll()"
+      class="messageBox"
+      onscroll="checkScroll()"
     >
 
-      <div class="message-text">
+      <div class="message">
 
 Wishing you a very, very Happy Birthday, Rheet 🤍✨
 
@@ -1108,39 +574,26 @@ And please...
 Always stay happy. 🤍✨
 
       </div>
-
     </div>
 
-    <div
-      id="scrollWarning"
-      class="scroll-warning"
-    >
+    <div id="warning" class="warning">
       Scroll down bhai 🫠🙂‍↔️
     </div>
 
     <button
-      id="messageContinue"
-      class="btn message-continue"
+      id="messageBtn"
+      class="btn messageBtn"
       onclick="messageContinue()"
     >
       Continue 💌
     </button>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     CHOCOLATE PAGE
-================================================== -->
-
-<section
-  id="chocolatePage"
-  class="page"
->
-
+<!-- CHOCOLATE -->
+<section id="chocolatePage" class="page">
   <div class="card">
 
     <h2>
@@ -1149,7 +602,7 @@ Always stay happy. 🤍✨
 
     <button
       class="btn"
-      style="width:90%;max-width:330px;"
+      style="width:90%;max-width:330px"
       onclick="wrongChocolate()"
     >
       💩
@@ -1159,61 +612,45 @@ Always stay happy. 🤍✨
 
     <button
       class="btn"
-      style="width:90%;max-width:330px;"
+      style="width:90%;max-width:330px"
       onclick="showChocolateInput()"
     >
       Something else 🍫
     </button>
 
     <div
-      id="chocolateInputArea"
-      style="display:none;margin-top:15px;"
+      id="chocolateArea"
+      style="display:none;margin-top:15px"
     >
 
       <input
         id="chocolateInput"
-        class="input-box"
+        class="input"
         type="text"
         placeholder="Write your favourite chocolate..."
-        autocomplete="off"
       >
 
-      <button
-        class="btn"
-        onclick="finishChocolate()"
-      >
+      <button class="btn" onclick="finishChocolate()">
         Continue 🤍
       </button>
 
-      <div
-        id="chocolateError"
-        class="error"
-      ></div>
+      <div id="chocolateError" class="error"></div>
 
     </div>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     VIDEO PAGE
-================================================== -->
-
-<section
-  id="videoPage"
-  class="page"
->
-
+<!-- VIDEO -->
+<section id="videoPage" class="page">
   <div class="card">
 
     <h2>
       Just watch this too... 🥹🤍
     </h2>
 
-    <div class="video-box">
+    <div class="videoBox">
 
       <video
         id="birthdayVideo"
@@ -1221,14 +658,10 @@ Always stay happy. 🤍✨
         preload="auto"
         controls
       >
-
         <source
           src="https://res.cloudinary.com/s4rjpsff/video/upload/v1790100963/InShot_20260922_234042635.mp4"
           type="video/mp4"
         >
-
-        Your browser does not support this video.
-
       </video>
 
     </div>
@@ -1237,37 +670,23 @@ Always stay happy. 🤍✨
       Watch till the end... 🤍
     </p>
 
-    <div class="video-note">
+    <div class="hint">
       The next page will open automatically when the video ends ✨
     </div>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     FINAL PAGE
-================================================== -->
-
-<section
-  id="finalPage"
-  class="page"
->
-
+<!-- FINAL -->
+<section id="finalPage" class="page">
   <div class="card">
 
     <h1>
       Bye Rheet 🥹💗
     </h1>
 
-    <p
-      style="
-        font-size:16px;
-        margin-top:15px;
-      "
-    >
+    <p style="font-size:16px">
       Once again, wishing you a very Happy Birthday Rheet 🎂🤍✨
     </p>
 
@@ -1277,705 +696,388 @@ Always stay happy. 🤍✨
       Always keep smiling and always stay happy. 🫶🏻
     </p>
 
-    <div
-      style="
-        font-size:55px;
-        margin-top:25px;
-      "
-    >
+    <div style="font-size:55px;margin-top:25px">
       🥹🤍✨
     </div>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     PEHLA NASHA
-================================================== -->
-
-<audio
-  id="pehlaNasha"
-  preload="auto"
->
-
+<!-- ONLY PEHLA NASHA -->
+<audio id="pehlaNasha" preload="auto">
   <source
     src="https://res.cloudinary.com/s4rjpsff/video/upload/v1790101237/AudioCutter_pehla_nasha_indian_hindi_piano_song___piano_cover_pawandeep_Singh_25.mp3"
     type="audio/mpeg"
   >
-
 </audio>
-
 
 
 <script>
 
-
-/* ==================================================
-   PAGE CONTROL
-================================================== */
+/* =========================
+   PAGE
+========================= */
 
 function showPage(id){
 
-  document
-    .querySelectorAll(".page")
-    .forEach(function(page){
+  document.querySelectorAll(".page").forEach(function(page){
+    page.classList.remove("active");
+  });
 
-      page.classList.remove("active");
-
-    });
-
-  const page =
-    document.getElementById(id);
+  const page=document.getElementById(id);
 
   if(page){
-
     page.classList.add("active");
-
   }
 
   window.scrollTo(0,0);
-
 }
 
 
-
-/* ==================================================
+/* =========================
    LOGIN
-================================================== */
+========================= */
 
 function login(){
 
-  const password =
-    document
-      .getElementById("password")
-      .value
-      .trim();
+  const password=
+    document.getElementById("password").value.trim();
 
-  const error =
-    document
-      .getElementById("loginError");
+  const error=
+    document.getElementById("loginError");
 
+  if(password==="RHEET"){
 
-  if(password === "RHEET"){
-
-    error.textContent = "";
+    error.textContent="";
 
     showPage("penguinPage");
 
-    setTimeout(
-      speakHello,
-      500
-    );
+    setTimeout(function(){
+      speakHello();
+    },500);
 
-  }
+  }else{
 
-  else{
-
-    error.textContent =
+    error.textContent=
       "Wrong password 😭 Try again!";
 
   }
-
 }
 
 
 document
-  .getElementById("password")
-  .addEventListener(
-    "keydown",
-    function(event){
+.getElementById("password")
+.addEventListener("keydown",function(e){
 
-      if(event.key === "Enter"){
+  if(e.key==="Enter"){
+    login();
+  }
 
-        login();
-
-      }
-
-    }
-  );
+});
 
 
-
-/* ==================================================
-   PENGUIN VOICE
-================================================== */
+/* =========================
+   VOICE
+========================= */
 
 function speakHello(){
 
-  if(
-    !("speechSynthesis" in window)
-  ){
-
+  if(!("speechSynthesis" in window)){
     return;
-
   }
 
   speechSynthesis.cancel();
-
   speechSynthesis.resume();
 
+  const voice=
+    new SpeechSynthesisUtterance("Hello Rheet!");
 
-  const utterance =
-    new SpeechSynthesisUtterance(
-      "Hello Rheet!"
-    );
+  voice.lang="en-US";
+  voice.rate=.85;
+  voice.pitch=1.15;
+  voice.volume=1;
 
+  const voices=speechSynthesis.getVoices();
 
-  utterance.lang =
-    "en-US";
+  const english=
+    voices.find(function(v){
+      return v.lang &&
+        v.lang.toLowerCase().startsWith("en");
+    });
 
-  utterance.rate =
-    .85;
-
-  utterance.pitch =
-    1.15;
-
-  utterance.volume =
-    1;
-
-
-  const voices =
-    speechSynthesis.getVoices();
-
-
-  const englishVoice =
-    voices.find(
-      function(voice){
-
-        return (
-          voice.lang &&
-          voice.lang
-            .toLowerCase()
-            .startsWith("en")
-        );
-
-      }
-    );
-
-
-  if(englishVoice){
-
-    utterance.voice =
-      englishVoice;
-
+  if(english){
+    voice.voice=english;
   }
 
-
-  speechSynthesis.speak(
-    utterance
-  );
-
+  speechSynthesis.speak(voice);
 }
 
 
-
-/* ==================================================
+/* =========================
    SOUND PAGE
-================================================== */
+========================= */
 
-function goToSoundPage(){
+function goSound(){
 
-  if(
-    "speechSynthesis" in window
-  ){
-
+  if("speechSynthesis" in window){
     speechSynthesis.cancel();
-
   }
 
-  showPage(
-    "soundPage"
-  );
-
+  showPage("soundPage");
 }
 
 
-
-/* ==================================================
+/* =========================
    TICK SOUND
-================================================== */
-
-let audioContext = null;
-
+========================= */
 
 function playTick(){
 
   try{
 
-    const AudioContext =
+    const AudioContext=
       window.AudioContext ||
       window.webkitAudioContext;
 
-
     if(!AudioContext){
-
       return;
-
     }
 
+    const ctx=new AudioContext();
 
-    if(!audioContext){
+    const oscillator=ctx.createOscillator();
 
-      audioContext =
-        new AudioContext();
+    const gain=ctx.createGain();
 
-    }
+    oscillator.type="sine";
 
-
-    if(
-      audioContext.state ===
-      "suspended"
-    ){
-
-      audioContext.
-        resume();
-
-    }
-
-    const oscillator =
-      audioContext.createOscillator();
-
-    const gain =
-      audioContext.createGain();
-
-
-    oscillator.type =
-      "sine";
-
-
-    oscillator.frequency.setValueAtTime(
-      850,
-      audioContext.currentTime
-    );
-
+    oscillator.frequency.value=850;
 
     gain.gain.setValueAtTime(
       .0001,
-      audioContext.currentTime
+      ctx.currentTime
     );
-
 
     gain.gain.exponentialRampToValueAtTime(
       .35,
-      audioContext.currentTime + .01
+      ctx.currentTime+.01
     );
-
 
     gain.gain.exponentialRampToValueAtTime(
       .0001,
-      audioContext.currentTime + .11
+      ctx.currentTime+.11
     );
-
 
     oscillator.connect(gain);
 
-    gain.connect(
-      audioContext.destination
-    );
-
+    gain.connect(ctx.destination);
 
     oscillator.start();
 
     oscillator.stop(
-      audioContext.currentTime + .12
+      ctx.currentTime+.12
     );
 
+  }catch(e){
+
+    console.log(e);
 
   }
-
-  catch(error){
-
-    console.log(error);
-
-  }
-
 }
 
 
+/* =========================
+   MUSIC
+========================= */
 
-/* ==================================================
-   PEHLA NASHA AUDIO
-================================================== */
+const music=
+  document.getElementById("pehlaNasha");
 
-const pehlaNasha =
-  document.getElementById(
-    "pehlaNasha"
-  );
+music.volume=1;
+
+function startMusic(){
+
+  if(!music.paused){
+    return;
+  }
+
+  music.play()
+  .then(function(){
+
+    document.getElementById("musicStatus").textContent=
+      "Pehla Nasha is playing 🎵🤍";
+
+  })
+  .catch(function(){
+
+    document.getElementById("musicStatus").textContent=
+      "Tap the 🔊 bubble to play Pehla Nasha 🎵";
+
+  });
+}
 
 
-pehlaNasha.volume =
-  1.0;
-
-
-
-/* ==================================================
+/* =========================
    COUNTDOWN
-================================================== */
+========================= */
 
-let countdownRunning =
-  false;
-
+let countdownStarted=false;
 
 function startCountdown(){
 
-  if(countdownRunning){
-
+  if(countdownStarted){
     return;
-
   }
 
+  countdownStarted=true;
 
-  countdownRunning =
-    true;
+  music.pause();
+  music.currentTime=0;
 
+  showPage("countdownPage");
 
-  pehlaNasha.pause();
+  let number=5;
 
-  pehlaNasha.currentTime =
-    0;
+  const display=
+    document.getElementById("countNumber");
 
-
-  showPage(
-    "countdownPage"
-  );
-
-
-  let number =
-    5;
-
-
-  const display =
-    document.getElementById(
-      "countNumber"
-    );
-
-
-  display.textContent =
-    number;
-
+  display.textContent=number;
 
   playTick();
 
+  const timer=setInterval(function(){
 
-  const interval =
-    setInterval(
-      function(){
+    number--;
 
+    if(number>=1){
 
-        number--;
+      display.textContent=number;
 
+      display.style.animation="none";
 
-        if(number >= 1){
+      void display.offsetWidth;
 
-          display.textContent =
-            number;
+      display.style.animation="pop .7s ease";
 
+      playTick();
 
-          display.style.animation =
-            "none";
+    }else{
 
+      clearInterval(timer);
 
-          void display.offsetWidth;
+      countdownStarted=false;
 
+      display.textContent="🎉";
 
-          display.style.animation =
-            "numberPop .8s ease";
+      showPage("musicPage");
 
+      startMusic();
 
-          playTick();
+    }
 
-        }
-
-
-        else{
-
-
-          clearInterval(
-            interval
-          );
-
-
-          display.textContent =
-            "🎉";
-
-
-          countdownRunning =
-            false;
-
-
-          showPage(
-            "musicPage"
-          );
-
-
-          startPehlaNasha();
-
-        }
-
-
-      },
-      1000
-    );
-
+  },1000);
 }
 
 
-
-/* ==================================================
-   START PEHLA NASHA
-================================================== */
-
-function startPehlaNasha(){
-
-  if(pehlaNasha.paused){
-
-    pehlaNasha.volume =
-      1.0;
-
-
-    pehlaNasha
-      .play()
-      .then(function(){
-
-        console.log(
-          "Pehla Nasha playing 🎵"
-        );
-
-
-        const status =
-          document.getElementById(
-            "musicStatus"
-          );
-
-
-        if(status){
-
-          status.textContent =
-            "Pehla Nasha is playing 🎵🤍";
-
-        }
-
-      })
-      .catch(function(error){
-
-        console.log(
-          "Autoplay blocked:",
-          error
-        );
-
-
-        const status =
-          document.getElementById(
-            "musicStatus"
-          );
-
-
-        if(status){
-
-          status.textContent =
-            "Tap the 🔊 bubble to play Pehla Nasha 🎵";
-
-        }
-
-      });
-
-  }
-
-}
-
-
-
-/* ==================================================
+/* =========================
    MUSIC BUBBLE
-================================================== */
+========================= */
 
-function musicBubbleClick(event){
+function musicClick(e){
 
-  const burst =
-    document.createElement(
-      "div"
-    );
+  const burst=
+    document.createElement("div");
 
+  burst.className="burst";
 
-  burst.className =
-    "burst";
+  burst.style.left=e.clientX+"px";
+  burst.style.top=e.clientY+"px";
 
+  document.body.appendChild(burst);
 
-  burst.style.left =
-    event.clientX + "px";
+  setTimeout(function(){
+    burst.remove();
+  },700);
 
+  music.play()
+  .then(function(){
 
-  burst.style.top =
-    event.clientY + "px";
+    document.getElementById("musicStatus").textContent=
+      "Pehla Nasha is playing 🎵🤍";
 
+    setTimeout(function(){
+      showPage("birthdayPage");
+    },350);
 
-  document.body.appendChild(
-    burst
-  );
+  })
+  .catch(function(){
 
+    document.getElementById("musicStatus").textContent=
+      "Tap the 🔊 bubble again 🎵";
 
-  setTimeout(
-    function(){
-
-      burst.remove();
-
-    },
-    700
-  );
-
-
-  pehlaNasha.volume =
-    1.0;
-
-
-  pehlaNasha
-    .play()
-    .then(function(){
-
-      const status =
-        document.getElementById(
-          "musicStatus"
-        );
-
-
-      if(status){
-
-        status.textContent =
-          "Pehla Nasha is playing 🎵🤍";
-
-      }
-
-
-      setTimeout(
-        function(){
-
-          showPage(
-            "birthdayPage"
-          );
-
-        },
-        400
-      );
-
-    })
-    .catch(function(error){
-
-      console.log(
-        "Music error:",
-        error
-      );
-
-    });
-
+  });
 }
 
 
+/* =========================
+   MESSAGE
+========================= */
 
-/* ==================================================
-   MESSAGE SCROLL
-================================================== */
+let messageRead=false;
 
-let messageFullyRead =
-  false;
+function checkScroll(){
 
+  const box=
+    document.getElementById("messageBox");
 
-function checkMessageScroll(){
+  const button=
+    document.getElementById("messageBtn");
 
-  const box =
-    document.getElementById(
-      "messageBox"
-    );
-
-
-  const button =
-    document.getElementById(
-      "messageContinue"
-    );
-
-
-  const reachedBottom =
-    box.scrollTop +
+  if(
+    box.scrollTop+
     box.clientHeight >=
-    box.scrollHeight - 8;
+    box.scrollHeight-8
+  ){
 
+    messageRead=true;
 
-  if(reachedBottom){
-
-    messageFullyRead =
-      true;
-
-
-    button.classList.add(
-      "ready"
-    );
+    button.classList.add("ready");
 
   }
-
 }
 
-
-
-/* ==================================================
-   MESSAGE CONTINUE
-================================================== */
 
 function messageContinue(){
 
-  const warning =
-    document.getElementById(
-      "scrollWarning"
-    );
+  const warning=
+    document.getElementById("warning");
 
+  if(!messageRead){
 
-  if(!messageFullyRead){
-
-    warning.classList.remove(
-      "show"
-    );
-
+    warning.classList.remove("show");
 
     void warning.offsetWidth;
 
+    warning.classList.add("show");
 
-    warning.classList.add(
-      "show"
-    );
-
-
-    const box =
-      document.getElementById(
-        "messageBox"
-      );
-
-
-    box.scrollBy({
-
-      top:130,
-
-      behavior:"smooth"
-
-    });
-
+    document
+      .getElementById("messageBox")
+      .scrollBy({
+        top:140,
+        behavior:"smooth"
+      });
 
     return;
-
   }
 
-
-  showPage(
-    "chocolatePage"
-  );
-
+  showPage("chocolatePage");
 }
 
 
-
-/* ==================================================
+/* =========================
    CHOCOLATE
-================================================== */
+========================= */
 
 function wrongChocolate(){
 
@@ -1988,152 +1090,95 @@ function wrongChocolate(){
 
 function showChocolateInput(){
 
-  document
-    .getElementById(
-      "chocolateInputArea"
-    )
-    .style.display =
-      "block";
+  document.getElementById("chocolateArea")
+    .style.display="block";
 
 }
 
 
 function finishChocolate(){
 
-  const input =
-    document.getElementById(
-      "chocolateInput"
-    );
+  const value=
+    document
+      .getElementById("chocolateInput")
+      .value.trim();
 
+  const error=
+    document.getElementById("chocolateError");
 
-  const error =
-    document.getElementById(
-      "chocolateError"
-    );
+  if(!value){
 
-
-  const value =
-    input.value.trim();
-
-
-  if(value === ""){
-
-    error.textContent =
+    error.textContent=
       "Write something first 😭🍫";
 
     return;
-
   }
 
+  error.textContent="";
 
-  error.textContent =
-    "";
+  showPage("videoPage");
 
-
-  showPage(
-    "videoPage"
-  );
-
-
-  setTimeout(
-    startBirthdayVideo,
-    300
-  );
-
+  setTimeout(function(){
+    startVideo();
+  },300);
 }
 
 
-
-/* ==================================================
+/* =========================
    VIDEO
-================================================== */
+========================= */
 
-const birthdayVideo =
-  document.getElementById(
-    "birthdayVideo"
-  );
+const video=
+  document.getElementById("birthdayVideo");
 
 
-function startBirthdayVideo(){
+function startVideo(){
 
   /*
-    Pause Pehla Nasha when video starts.
-    Do NOT reset currentTime.
+    Pause Pehla Nasha.
+
+    IMPORTANT:
+    We DO NOT reset music.currentTime.
   */
 
-  if(!pehlaNasha.paused){
+  music.pause();
 
-    pehlaNasha.pause();
-
-  }
-
-
-  birthdayVideo
-    .play()
-    .catch(function(error){
-
-      console.log(
-        "Video autoplay blocked:",
-        error
-      );
-
-    });
-
+  video.play()
+  .catch(function(e){
+    console.log("Video autoplay blocked:",e);
+  });
 }
 
 
+video.addEventListener("ended",function(){
 
-/* ==================================================
-   VIDEO ENDED
-================================================== */
+  /*
+    Resume the song from exactly
+    where it was paused.
+  */
 
-birthdayVideo.addEventListener(
-  "ended",
-  function(){
+  music.play()
+  .catch(function(e){
+    console.log("Music resume blocked:",e);
+  });
 
-    /*
-      Resume Pehla Nasha from
-      exactly where it stopped.
-    */
+  showPage("finalPage");
 
-    pehlaNasha
-      .play()
-      .catch(function(error){
-
-        console.log(
-          "Pehla Nasha resume blocked:",
-          error
-        );
-
-      });
+});
 
 
-    showPage(
-      "finalPage"
-    );
-
-  }
-);
-
-
-
-/* ==================================================
+/* =========================
    FLOATING HEARTS
-================================================== */
+========================= */
 
 function createHeart(){
 
-  const heart =
-    document.createElement(
-      "div"
-    );
+  const heart=
+    document.createElement("div");
 
+  heart.className="heart";
 
-  heart.className =
-    "heart";
-
-
-  const hearts = [
+  const list=[
     "🤍",
     "💗",
     "💖",
@@ -2141,72 +1186,26 @@ function createHeart(){
     "✨"
   ];
 
+  heart.textContent=
+    list[Math.floor(Math.random()*list.length)];
 
-  heart.textContent =
-    hearts[
-      Math.floor(
-        Math.random() *
-        hearts.length
-      )
-    ];
+  heart.style.left=
+    Math.random()*100+"vw";
 
+  heart.style.fontSize=
+    12+Math.random()*18+"px";
 
-  heart.style.left =
-    Math.random() * 100 + "vw";
+  heart.style.animationDuration=
+    5+Math.random()*5+"s";
 
+  document.body.appendChild(heart);
 
-  heart.style.fontSize =
-    (
-      12 +
-      Math.random() * 18
-    ) + "px";
-
-
-  heart.style.animationDuration =
-    (
-      5 +
-      Math.random() * 5
-    ) + "s";
-
-
-  document.body.appendChild(
-    heart
-  );
-
-
-  setTimeout(
-    function(){
-
-      heart.remove();
-
-    },
-    10000
-  );
-
+  setTimeout(function(){
+    heart.remove();
+  },10000);
 }
 
-
-setInterval(
-  createHeart,
-  700
-);
-
-
-
-/* ==================================================
-   STOP EVERYTHING ON PAGE CLOSE
-================================================== */
-
-window.addEventListener(
-  "beforeunload",
-  function(){
-
-    pehlaNasha.pause();
-
-    birthdayVideo.pause();
-
-  }
-);
+setInterval(createHeart,700);
 
 </script>
 
