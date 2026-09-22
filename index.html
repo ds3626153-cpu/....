@@ -1531,3 +1531,684 @@ function playTick(){
     ){
 
       audioContext.
+        resume();
+
+    }
+
+    const oscillator =
+      audioContext.createOscillator();
+
+    const gain =
+      audioContext.createGain();
+
+
+    oscillator.type =
+      "sine";
+
+
+    oscillator.frequency.setValueAtTime(
+      850,
+      audioContext.currentTime
+    );
+
+
+    gain.gain.setValueAtTime(
+      .0001,
+      audioContext.currentTime
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+      .35,
+      audioContext.currentTime + .01
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+      .0001,
+      audioContext.currentTime + .11
+    );
+
+
+    oscillator.connect(gain);
+
+    gain.connect(
+      audioContext.destination
+    );
+
+
+    oscillator.start();
+
+    oscillator.stop(
+      audioContext.currentTime + .12
+    );
+
+
+  }
+
+  catch(error){
+
+    console.log(error);
+
+  }
+
+}
+
+
+
+/* ==================================================
+   PEHLA NASHA AUDIO
+================================================== */
+
+const pehlaNasha =
+  document.getElementById(
+    "pehlaNasha"
+  );
+
+
+pehlaNasha.volume =
+  1.0;
+
+
+
+/* ==================================================
+   COUNTDOWN
+================================================== */
+
+let countdownRunning =
+  false;
+
+
+function startCountdown(){
+
+  if(countdownRunning){
+
+    return;
+
+  }
+
+
+  countdownRunning =
+    true;
+
+
+  pehlaNasha.pause();
+
+  pehlaNasha.currentTime =
+    0;
+
+
+  showPage(
+    "countdownPage"
+  );
+
+
+  let number =
+    5;
+
+
+  const display =
+    document.getElementById(
+      "countNumber"
+    );
+
+
+  display.textContent =
+    number;
+
+
+  playTick();
+
+
+  const interval =
+    setInterval(
+      function(){
+
+
+        number--;
+
+
+        if(number >= 1){
+
+          display.textContent =
+            number;
+
+
+          display.style.animation =
+            "none";
+
+
+          void display.offsetWidth;
+
+
+          display.style.animation =
+            "numberPop .8s ease";
+
+
+          playTick();
+
+        }
+
+
+        else{
+
+
+          clearInterval(
+            interval
+          );
+
+
+          display.textContent =
+            "🎉";
+
+
+          countdownRunning =
+            false;
+
+
+          showPage(
+            "musicPage"
+          );
+
+
+          startPehlaNasha();
+
+        }
+
+
+      },
+      1000
+    );
+
+}
+
+
+
+/* ==================================================
+   START PEHLA NASHA
+================================================== */
+
+function startPehlaNasha(){
+
+  if(pehlaNasha.paused){
+
+    pehlaNasha.volume =
+      1.0;
+
+
+    pehlaNasha
+      .play()
+      .then(function(){
+
+        console.log(
+          "Pehla Nasha playing 🎵"
+        );
+
+
+        const status =
+          document.getElementById(
+            "musicStatus"
+          );
+
+
+        if(status){
+
+          status.textContent =
+            "Pehla Nasha is playing 🎵🤍";
+
+        }
+
+      })
+      .catch(function(error){
+
+        console.log(
+          "Autoplay blocked:",
+          error
+        );
+
+
+        const status =
+          document.getElementById(
+            "musicStatus"
+          );
+
+
+        if(status){
+
+          status.textContent =
+            "Tap the 🔊 bubble to play Pehla Nasha 🎵";
+
+        }
+
+      });
+
+  }
+
+}
+
+
+
+/* ==================================================
+   MUSIC BUBBLE
+================================================== */
+
+function musicBubbleClick(event){
+
+  const burst =
+    document.createElement(
+      "div"
+    );
+
+
+  burst.className =
+    "burst";
+
+
+  burst.style.left =
+    event.clientX + "px";
+
+
+  burst.style.top =
+    event.clientY + "px";
+
+
+  document.body.appendChild(
+    burst
+  );
+
+
+  setTimeout(
+    function(){
+
+      burst.remove();
+
+    },
+    700
+  );
+
+
+  pehlaNasha.volume =
+    1.0;
+
+
+  pehlaNasha
+    .play()
+    .then(function(){
+
+      const status =
+        document.getElementById(
+          "musicStatus"
+        );
+
+
+      if(status){
+
+        status.textContent =
+          "Pehla Nasha is playing 🎵🤍";
+
+      }
+
+
+      setTimeout(
+        function(){
+
+          showPage(
+            "birthdayPage"
+          );
+
+        },
+        400
+      );
+
+    })
+    .catch(function(error){
+
+      console.log(
+        "Music error:",
+        error
+      );
+
+    });
+
+}
+
+
+
+/* ==================================================
+   MESSAGE SCROLL
+================================================== */
+
+let messageFullyRead =
+  false;
+
+
+function checkMessageScroll(){
+
+  const box =
+    document.getElementById(
+      "messageBox"
+    );
+
+
+  const button =
+    document.getElementById(
+      "messageContinue"
+    );
+
+
+  const reachedBottom =
+    box.scrollTop +
+    box.clientHeight >=
+    box.scrollHeight - 8;
+
+
+  if(reachedBottom){
+
+    messageFullyRead =
+      true;
+
+
+    button.classList.add(
+      "ready"
+    );
+
+  }
+
+}
+
+
+
+/* ==================================================
+   MESSAGE CONTINUE
+================================================== */
+
+function messageContinue(){
+
+  const warning =
+    document.getElementById(
+      "scrollWarning"
+    );
+
+
+  if(!messageFullyRead){
+
+    warning.classList.remove(
+      "show"
+    );
+
+
+    void warning.offsetWidth;
+
+
+    warning.classList.add(
+      "show"
+    );
+
+
+    const box =
+      document.getElementById(
+        "messageBox"
+      );
+
+
+    box.scrollBy({
+
+      top:130,
+
+      behavior:"smooth"
+
+    });
+
+
+    return;
+
+  }
+
+
+  showPage(
+    "chocolatePage"
+  );
+
+}
+
+
+
+/* ==================================================
+   CHOCOLATE
+================================================== */
+
+function wrongChocolate(){
+
+  alert(
+    "Seriously? 💩😂 Try the other option!"
+  );
+
+}
+
+
+function showChocolateInput(){
+
+  document
+    .getElementById(
+      "chocolateInputArea"
+    )
+    .style.display =
+      "block";
+
+}
+
+
+function finishChocolate(){
+
+  const input =
+    document.getElementById(
+      "chocolateInput"
+    );
+
+
+  const error =
+    document.getElementById(
+      "chocolateError"
+    );
+
+
+  const value =
+    input.value.trim();
+
+
+  if(value === ""){
+
+    error.textContent =
+      "Write something first 😭🍫";
+
+    return;
+
+  }
+
+
+  error.textContent =
+    "";
+
+
+  showPage(
+    "videoPage"
+  );
+
+
+  setTimeout(
+    startBirthdayVideo,
+    300
+  );
+
+}
+
+
+
+/* ==================================================
+   VIDEO
+================================================== */
+
+const birthdayVideo =
+  document.getElementById(
+    "birthdayVideo"
+  );
+
+
+function startBirthdayVideo(){
+
+  /*
+    Pause Pehla Nasha when video starts.
+    Do NOT reset currentTime.
+  */
+
+  if(!pehlaNasha.paused){
+
+    pehlaNasha.pause();
+
+  }
+
+
+  birthdayVideo
+    .play()
+    .catch(function(error){
+
+      console.log(
+        "Video autoplay blocked:",
+        error
+      );
+
+    });
+
+}
+
+
+
+/* ==================================================
+   VIDEO ENDED
+================================================== */
+
+birthdayVideo.addEventListener(
+  "ended",
+  function(){
+
+    /*
+      Resume Pehla Nasha from
+      exactly where it stopped.
+    */
+
+    pehlaNasha
+      .play()
+      .catch(function(error){
+
+        console.log(
+          "Pehla Nasha resume blocked:",
+          error
+        );
+
+      });
+
+
+    showPage(
+      "finalPage"
+    );
+
+  }
+);
+
+
+
+/* ==================================================
+   FLOATING HEARTS
+================================================== */
+
+function createHeart(){
+
+  const heart =
+    document.createElement(
+      "div"
+    );
+
+
+  heart.className =
+    "heart";
+
+
+  const hearts = [
+    "🤍",
+    "💗",
+    "💖",
+    "💕",
+    "✨"
+  ];
+
+
+  heart.textContent =
+    hearts[
+      Math.floor(
+        Math.random() *
+        hearts.length
+      )
+    ];
+
+
+  heart.style.left =
+    Math.random() * 100 + "vw";
+
+
+  heart.style.fontSize =
+    (
+      12 +
+      Math.random() * 18
+    ) + "px";
+
+
+  heart.style.animationDuration =
+    (
+      5 +
+      Math.random() * 5
+    ) + "s";
+
+
+  document.body.appendChild(
+    heart
+  );
+
+
+  setTimeout(
+    function(){
+
+      heart.remove();
+
+    },
+    10000
+  );
+
+}
+
+
+setInterval(
+  createHeart,
+  700
+);
+
+
+
+/* ==================================================
+   STOP EVERYTHING ON PAGE CLOSE
+================================================== */
+
+window.addEventListener(
+  "beforeunload",
+  function(){
+
+    pehlaNasha.pause();
+
+    birthdayVideo.pause();
+
+  }
+);
+
+</script>
+
+</body>
+</html>
